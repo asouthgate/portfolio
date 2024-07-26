@@ -4,7 +4,6 @@ import Topbar from './Topbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css';
 
-
 const Layout = () => {
   return (
     <>
@@ -12,15 +11,9 @@ const Layout = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Exo&display=swap"
       />
-      <div className="container-fluid">
-        <div className="row">
-          Alex Southgate
-        </div>
-        <div id="main-panel" className="row">
-          <div id="outlet" className="col-12">
-            <Outlet/>
-          </div>
-        </div>
+      <div id="main-panel" className="">
+        <Topbar/>
+        <Outlet/>
       </div>
     </>
   );
