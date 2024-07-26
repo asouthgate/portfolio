@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
 
 body {
-  background-color: #12121a;
+  background-color: #16161a;
   color: #ffffff;
   font-family: 'Exo', sans-serif;
+}
+
+#main-panel {
+  background: #16161a;
 }

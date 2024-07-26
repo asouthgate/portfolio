@@ -1,0 +1,54 @@
+.animated-text {
+  transform: translate(0, 0);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Hint to the browser about potential changes */
+.animated-text {
+  will-change: transform;
+}
+
+.home-container {
+    height: calc(100vh - 4rem);
+}
+
+.home-container .row {
+    height: inherit;
+}
+
+.circle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensures the circle is drawn under other elements */
+}
+
+.circle {
+  stroke: black;
+  stroke-width: 2;
+  fill: none;
+}
+
+.float-effect {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust amplitude as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+p {
+  color: #bfc0e0;
+}
+
+h1 {
+  color: #e8bf6d;
+}

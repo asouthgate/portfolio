@@ -8,7 +8,7 @@ import Layout from './pages/Layout';
 import Publications from './pages/Publications';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 
 // Ensure jQuery is available globally
 window.$ = $;
@@ -30,6 +30,7 @@ export default function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/publications" element={<Publications />} />
         </Route>

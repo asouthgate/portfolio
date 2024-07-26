@@ -1,132 +1,38 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { ReactComponent as GitlabIcon } from 'bootstrap-icons/icons/gitlab.svg';
-import { ReactComponent as GithubIcon } from 'bootstrap-icons/icons/github.svg';
 import './home.css';
 import { getEvent } from '../api/requests'
-
-const getRandomPosition = (min, max) => Math.random() * (max - min) + min;
-
-const AnimatedDiv = ({ children }) => {
-  const divRef = useRef(null);
-
-  useEffect(() => {
-    const element = divRef.current;
-    if (!element) return;
-
-    const g = 0.00005;
-    let currentX = getRandomPosition(-50, 50);
-    let currentY = getRandomPosition(-50, 50);
-    const targetX = 0;
-    const targetY = 0;
-    let currentU = -0.02;
-    let currentV = 0.05;
-    let lastTime;
-
-    const animate = (timestamp) => {
-      if (!lastTime) lastTime = timestamp;
-      const dt = Math.min(50.0, timestamp - lastTime);
-
-      const dx = targetX - currentX;
-      const dy = targetY - currentY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance > 0) {
-        currentU += g * dt * dx / distance;
-        currentV += g * dt * dy / distance;
-      }
-      currentX += dt * currentU;
-      currentY += dt * currentV;
-
-      // Apply the transform
-      element.style.transform = `translate(${currentX}px, ${currentY}px)`;
-
-      // Request the next frame
-      requestAnimationFrame(animate);
-      lastTime = timestamp;
-    };
-
-    // Start the animation
-    requestAnimationFrame(animate);
-
-    return () => {
-      // Clean up if the component unmounts
-      element.style.transform = 'none';
-    };
-  }, []);
-
-  return (
-    <div ref={divRef} className="animated-text">
-      {children}
-    </div>
-  );
-};
+import exampleImage from '../assets/site-image.png';
+import FloatEffect from '../FloatEffect';
 
 
 const Home = () => {
-  const divRef = useRef(null);
 
-  useEffect(() => {
-    const element = divRef.current;
-    if (!element) return;
+  const aboutme = `
+Croeso :) I am a research software engineer from Wales, UK.
+My work is focused on solving software engineering problems
+for scientific organisations. To do this, I make use of software
+engineering principles, plenty of practice with algorithms,
+knowledge of cloud & HPC systems, and scientific expertise.`;
 
-    const g = 0.00005;
-    let currentX = 50.0;
-    let currentY = -30.0;
-    let targetX = 0.0;
-    let targetY = 0.0;
-    let currentU = -0.02;
-    let currentV = 0.05;
-    let lastTime;
-
-    const animate = (timestamp) => {
-      if (!lastTime) lastTime = timestamp;
-      const dt = Math.min(50.0, timestamp - lastTime);
-
-      const dx = targetX - currentX;
-      const dy = targetY - currentY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance > 0) {
-        currentU += g * dt *  dx / distance;
-        currentV += g * dt *  dy / distance;
-      }
-      currentX += dt * currentU;
-      currentY += dt * currentV;
-
-      // Apply the transform
-      element.style.transform = `translate(${currentX}px, ${currentY}px)`;
-
-      // Request the next frame
-      requestAnimationFrame(animate);
-      lastTime = timestamp;
-    };
-
-    // Start the animation
-    requestAnimationFrame(animate);
-
-    return () => {
-      // Clean up if the component unmounts
-      element.style.transform = 'none';
-    };
-  }, []);
-
+  let speed_slow = 100;
+  let speed_fast = 50;
 
   return (
     <div className="container home-container">
-        <div className="row text-center d-flex flex-column justify-content-center">
-            <div>
-                <h1>
-                    Alex J. Southgate 
-                </h1>
-                <h2> PhD </h2>
-                <h3> Research Software Engineer </h3>
+        <div className="row text-center">
+            <div className="col-3"/>
+            <div className="col-6">
+                <div style={{ marginTop: '5%' }}>
+                    <h1> Alex J. Southgate </h1>
+                    <h4> PhD </h4>
+                    <p> Research Software Engineer </p>
+                    <p> {aboutme} </p>
+                  <FloatEffect className="additional-class">
+                      <img src={exampleImage} alt="Example" className="img-fluid" />
+                  </FloatEffect>
+                </div>
             </div>
-            <div className="circle-container" ref={divRef} className="animated-text">
-                <GitlabIcon/>
-            </div>
-           <AnimatedDiv>
-                <GitlabIcon/>
-            </AnimatedDiv> 
+            <div className="col-3"/>
         </div>
     </div>
   );
