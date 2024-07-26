@@ -7,26 +7,31 @@ import './topbar.css';
 
 const Topbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-custom">
+    <nav className="navbar navbar-expand-lg navbar-custom auto-m">
       <div className="container-fluid">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse text-center" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
+          <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/home" className="nav-link">Home </Link>
+              <Link to="/home" className="nav-link"> 1/ Home </Link>
             </li>
             <li className="nav-item">
-              <Link to="/projects" className="nav-link">Projects </Link>
+              <Link to="/projects" className="nav-link"> 2/ Projects </Link>
             </li>
             <li className="nav-item">
-              <Link to="/publications" className="nav-link">Publications </Link>
+              <Link to="/publications" className="nav-link"> 3/ Publications </Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact" className="nav-link">Contact </Link>
+              <Link to="/contact" className="nav-link"> 4/ Contact </Link>
             </li>
           </ul>
+        </div>
+        <div className="d-flex">
+            <GithubIcon style={{ width: '20px', height: '20px' }} />
+            <div style={{ padding: '8px' }}>  </div>
+            <GitlabIcon style={{ width: '20px', height: '20px' }} />
         </div>
       </div>
     </nav>

@@ -3,6 +3,8 @@ import './home.css';
 import { getEvent } from '../api/requests'
 import exampleImage from '../assets/site-image.png';
 import FloatEffect from '../FloatEffect';
+import Publications from './Publications';
+import Projects from './Projects';
 
 
 const Home = () => {
@@ -18,21 +20,21 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
   let speed_fast = 50;
 
   return (
-    <div className="container home-container">
+    <div className="container-fluid home-container">
         <div className="row text-center">
-            <div className="col-3"/>
-            <div className="col-6">
-                <div style={{ marginTop: '5%' }}>
-                    <h1> Alex J. Southgate </h1>
-                    <h4> PhD </h4>
-                    <p> Research Software Engineer </p>
-                    <p> {aboutme} </p>
+            <div className="col">
+                <div style={{ marginLeft: '5%', marginTop: '5%', marginRight: '5%' }}>
+                    <h1 style={{ fontSize: '7em', textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
+                    <h2 style={{ fontSize: '3em', textAlign: 'center'}}> Research Software Engineer </h2>
+                </div>
+                <div style={{ fontSize: '3em', textAlign: 'center'}}>
                   <FloatEffect className="additional-class">
                       <img src={exampleImage} alt="Example" className="img-fluid" />
                   </FloatEffect>
                 </div>
+
             </div>
-            <div className="col-3"/>
+          <div/>
         </div>
     </div>
   );

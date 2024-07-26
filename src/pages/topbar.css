@@ -1,7 +1,6 @@
 .navbar-custom {
-    height: 4rem;
-    background: transparent;
-    color: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 1.5); /* Shadow under the top bar */
+    border-bottom: 2px solid #1f1c1d; /* Top border with 4px thickness and red color */
 }
 
 .navbar-custom .nav-link {
@@ -14,6 +13,10 @@
 
 .navbar-custom .navbar-toggler {
   border-color: transparent;
+}
+
+.nav-link {
+  text-align: center;
 }
 
 .navbar-custom .navbar-toggler-icon {

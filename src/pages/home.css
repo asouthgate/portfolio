@@ -16,6 +16,10 @@
     height: inherit;
 }
 
+.projects-container {
+    background: #515657;
+}
+
 .circle-container {
   position: absolute;
   top: 0;
@@ -46,9 +50,14 @@
 }
 
 p {
-  color: #bfc0e0;
+ text-align: justify;
+ color: #bfc0e0;
 }
 
 h1 {
-  color: #e8bf6d;
+  color: #272b28;
+}
+
+h4 {
+  color: #9d9dfa;
 }
