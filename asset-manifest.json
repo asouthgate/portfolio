@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ef85bcad.css",
+    "main.js": "/static/js/main.9a15bd0d.js",
+    "static/media/resistance-drawings.png": "/static/media/resistance-drawings.f04528f0ca4410e2be92.png",
+    "static/media/climb-paper.png": "/static/media/climb-paper.d5109131f9013b10ec36.png",
+    "static/media/cog-uk.png": "/static/media/cog-uk.5c57cda9765498bcad8e.png",
+    "static/media/github.svg": "/static/media/github.a2dcecaacdba94077f71818776dd805b.svg",
+    "index.html": "/index.html",
+    "static/media/gitlab.svg": "/static/media/gitlab.9c7ef3eedb2538843845796b382a4218.svg",
+    "main.ef85bcad.css.map": "/static/css/main.ef85bcad.css.map",
+    "main.9a15bd0d.js.map": "/static/js/main.9a15bd0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef85bcad.css",
+    "static/js/main.9a15bd0d.js"
+  ]
+}
