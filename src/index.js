@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
@@ -28,6 +28,11 @@ $(document).ready(function () {
  * E.g. /search to go to the search page.
  */
 export default function App() {
+
+  useEffect(() => {
+    document.title = 'Alex Southgate - Research Software Engineer';
+  }, []);
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
