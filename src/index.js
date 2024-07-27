@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="https://asouthgate.github.io/portfolio/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/home" />} />
