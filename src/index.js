@@ -12,6 +12,8 @@ import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 
+import packageJson from '../package.json'; // dont want to duplicate home var
+
 // Ensure jQuery is available globally
 window.$ = $;
 window.jQuery = $;
@@ -34,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="https://asouthgate.github.io/portfolio/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/home" />} />
