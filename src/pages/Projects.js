@@ -3,6 +3,8 @@ import { getEvent } from '../api/requests'
 import rainCloud from '../assets/raincloud.png';
 import resistanceMap from '../assets/resistance-drawings.png';
 import cogUK from '../assets/cog-uk.png';
+import BlackHoleInner from '../assets/blackhole-inner.png';
+import BlackHoleOuter from '../assets/blackhole-outer.png';
 import climbPaper from '../assets/climb-paper.png';
 import {FloatEffect, SpinEffect} from '../Effects';
 import './common.css' // change this to common
@@ -26,13 +28,13 @@ const GravWaveProjects = () => {
             mostly this is either a) fixing bugs in signal processing software or b) reviewing merge
             requests.  
         </p>
-        <hr/>
       </div>
       <div className='col-6 col-md-3'>
         <ul>
           <li>API development & REST</li>
           <li>Python</li>
           <li>Rust</li>
+          <li>JavaScript, CSS, Bootstrap and React</li>
           <li>CI/CD (Gitlab) </li>
           <li>Testing methodologies</li>
           <li>Docker</li>
@@ -55,6 +57,7 @@ const GravWaveProjects = () => {
           <li>Collaborative development</li>
         </ul>
       </div>
+      <hr/>
     </div>
   );
 };
@@ -72,7 +75,6 @@ const MathBioProjects = () => {
             scientific calculations and interfacing with PostGIS. A large proportion of this project
             was database organisation and optimisation.
           </p>
-          <hr/>
         <ul>
           <li>PostGres & PostGIS</li>
           <li>Vector & Raster databases</li>
@@ -106,7 +108,6 @@ const CloudProjects = () => {
             system was critical during the COVID-19 pandemic, underpinning the UK's exceptional genomic 
             epidemiology.
           </p>
-          <hr/>
           <ul>
             <li>Linnux, Bash & Python</li>
             <li>Virtualization</li>
@@ -117,6 +118,7 @@ const CloudProjects = () => {
             <li>Cloud System Design</li>
           </ul>
         </div>
+      <hr/>
     </div>
   );
 };
@@ -140,7 +142,6 @@ const BioinformaticsProjects = () => {
             startup. I spent most of my time writing Python software specifically for testing, improving
             the unit tests of others, and setting up other test infrastructure.
           </p>
-          <hr/>
           <ul>
             <li>Python, R, Bash</li>
             <li>Statistical modelling </li>
@@ -154,6 +155,7 @@ const BioinformaticsProjects = () => {
         <div className='col-12 col-md-6' style={{padding: "2% 2% 2% 2%"}}>
            <img src={cogUK} alt="Example" className="img-fluid" />
         </div>
+      <hr/>
     </div>
   );
 };
@@ -163,10 +165,24 @@ const Intro = () => {
   return (
     <div className="text-center projects">
         <div className="intro row" style={{ marginTop: '5%' }}>
-            <div className='col-12 col-md-5'>
-                  <SpinEffect className="additional-class">
-                      <img src={rainCloud} alt="Example" className="img-fluid" />
+            <div className='col-12 col-md-5 d-flex flex-column'>
+                <div className="image-container m-auto">
+                  <SpinEffect className="image background" speed='100s' offset='90deg'>
+                    <img src={BlackHoleOuter} alt="Foreground" className="image background" />
                   </SpinEffect>
+                  {Array.from({ length: 4 }).map((_, i) => {
+                    const speed = `${10 + (i + 1) * 3}s`;
+                    const offset = `${i * 30}deg`;
+                    return (
+                      <SpinEffect key={i} className="image background" speed={speed} offset={offset}>
+                        <img src={BlackHoleOuter} alt={`Spin effect ${i}`} className="image background" />
+                      </SpinEffect>
+                    );
+                  })}
+                  <SpinEffect className="image foreground" speed='0.5s'>
+                    <img src={BlackHoleInner} alt="Background" className="image foreground" />
+                  </SpinEffect>
+                </div>
             </div>
             <div className='col-12 col-md-6' style={{ marginTop: '1%' }}>
             <h1> Projects </h1>
@@ -195,9 +211,9 @@ const Intro = () => {
                 Testing is important to me. I am champion the need for unit tests
                 and CI/CD in scientific organisations. There is work to do.
               </p>
-            <hr/>
            </div>
         </div>
+            <hr/>
     </div>
   );
 };

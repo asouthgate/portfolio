@@ -1,9 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './effects.css'
 
-const SpinEffect = ({ children, className = '' }) => {
+
+const SpinEffect = ({ children, className = '', speed = '2s', offset = '0deg' }) => {
+  const spinStyle = {
+    '--spin-speed': speed,
+    '--spin-offset': offset,
+  };
+
   return (
-    <div className={`spin-effect ${className}`}>
+    <div className={`spin-effect ${className}`} style={spinStyle}>
       {children}
     </div>
   );

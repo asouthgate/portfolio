@@ -9,6 +9,7 @@ import Publications from './pages/Publications';
 import Projects from './pages/Projects';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 
 // Ensure jQuery is available globally
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>

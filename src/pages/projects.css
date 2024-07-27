@@ -45,4 +45,26 @@
   text-align: left;
 }
 
+.image-container {
+  position: relative; /* Set the container to relative position */
+  width: 300px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
 
+.image {
+  position: absolute; /* Position all images absolutely within the container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the images take up the full container width */
+  height: 100%; /* Ensure the images take up the full container height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.foreground {
+  z-index: 1; /* Ensure the foreground image is on top */
+}
+
+.background {
+  z-index: 0; /* Ensure the background image is below the foreground */
+}

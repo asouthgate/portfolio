@@ -29,9 +29,13 @@ const Topbar = () => {
           </ul>
         </div>
         <div className="d-flex">
-            <GithubIcon style={{ width: '20px', height: '20px' }} />
+            <a href="https://github.com/asouthgate">
+                <GithubIcon style={{ width: '20px', height: '20px' }}/>
+            </a>
             <div style={{ padding: '8px' }}>  </div>
-            <GitlabIcon style={{ width: '20px', height: '20px' }} />
+            <a href="https://gitlab.com/asouthgate1">
+                <GitlabIcon style={{ width: '20px', height: '20px' }}/>
+            </a>
         </div>
       </div>
     </nav>

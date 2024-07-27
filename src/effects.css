@@ -14,16 +14,17 @@
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spin-effect {
+  display: inline-block;
+  animation: spin var(--spin-speed) linear infinite;
+  transform: rotate(var(--spin-offset));
 }
 
-.spin-effect {
-  display: inline-block; /* Ensure the effect applies to inline elements as well */
-  animation: spin 2s linear infinite; /* Adjust the duration and timing function as needed */
+@keyframes spin {
+  from {
+    transform: rotate(calc(var(--spin-offset) + 0deg));
+  }
+  to {
+    transform: rotate(calc(var(--spin-offset) + 360deg));
+  }
 }
