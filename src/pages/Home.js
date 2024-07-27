@@ -24,7 +24,7 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
         <div className="row text-center">
             <div className="col">
                 <div style={{ marginLeft: '5%', marginTop: '5%', marginRight: '5%' }}>
-                    <h1 style={{ fontSize: '7em', textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
+                    <h1 style={{ fontSize: '6em', textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
                     <h2 style={{ fontSize: '3em', textAlign: 'center'}}> Research Software Engineer </h2>
                 </div>
                 <div style={{ fontSize: '3em', textAlign: 'center'}}>

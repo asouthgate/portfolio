@@ -14,8 +14,8 @@ import './projects.css'
 const GravWaveProjects = () => {
   return (
     <div className="row gravwave-projects project">
-      <h1> Gravitational Wave Physics </h1>
       <div className='col-12 col-md-6'>
+      <h1> Gravitational Wave Physics </h1>
         <p>
             Since 2022 I have been working within the Gravity Exploration Institute, Cardiff. I 
             currently lead development of a prototype database system for the next generation of 
@@ -57,7 +57,6 @@ const GravWaveProjects = () => {
           <li>Collaborative development</li>
         </ul>
       </div>
-      <hr/>
     </div>
   );
 };
@@ -85,7 +84,9 @@ const MathBioProjects = () => {
         </ul>
         </div>
         <div className='col-12 col-md-6'>
+          <div>
            <img src={resistanceMap} alt="Example" className="img-fluid" />
+          </div>
         </div>
     </div>
   );
@@ -96,9 +97,6 @@ const CloudProjects = () => {
   return ( 
     <div className='row cloud-projects project'>
           <h1> Cloud Computing </h1>
-        <div className='col-12 col-md-6 d-flex justify-content-center align-items-center' style={{marginBottom:'3%'}}>
-           <img src={climbPaper} alt="Example" className="img-fluid" />
-        </div>
         <div className='col-12 col-md-6'>
           <p> 
             Although I make regular use of docker, virtualisation & cloud resources in most of my work, 
@@ -118,7 +116,10 @@ const CloudProjects = () => {
             <li>Cloud System Design</li>
           </ul>
         </div>
-      <hr/>
+        <div className='col-12 col-md-6'>
+           <img src={climbPaper} alt="Example" className="img-fluid" />
+        </div>
+
     </div>
   );
 };
@@ -126,6 +127,7 @@ const CloudProjects = () => {
 
 const BioinformaticsProjects = () => {
   return ( 
+    <div>
     <div className='row bioinformatics-projects project'>
         <div className='col-12 col-md-6'>
           <h1> Bioinformatics </h1>
@@ -155,7 +157,7 @@ const BioinformaticsProjects = () => {
         <div className='col-12 col-md-6' style={{padding: "2% 2% 2% 2%"}}>
            <img src={cogUK} alt="Example" className="img-fluid" />
         </div>
-      <hr/>
+    </div>
     </div>
   );
 };
@@ -164,13 +166,13 @@ const BioinformaticsProjects = () => {
 const Intro = () => {
   return (
     <div className="text-center projects">
-        <div className="intro row" style={{ marginTop: '5%' }}>
-            <div className='col-12 col-md-5 d-flex flex-column'>
-                <div className="image-container m-auto">
+        <div className="intro row" style={{padding: "2%"}}>
+            <div className='col-12 col-md-6 d-flex flex-column'>
+                <div className="image-container">
                   <SpinEffect className="image background" speed='100s' offset='90deg'>
                     <img src={BlackHoleOuter} alt="Foreground" className="image background" />
                   </SpinEffect>
-                  {Array.from({ length: 4 }).map((_, i) => {
+                  {Array.from({ length: 1 }).map((_, i) => {
                     const speed = `${10 + (i + 1) * 3}s`;
                     const offset = `${i * 30}deg`;
                     return (
@@ -213,7 +215,6 @@ const Intro = () => {
               </p>
            </div>
         </div>
-            <hr/>
     </div>
   );
 };

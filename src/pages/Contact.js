@@ -8,18 +8,18 @@ import './common.css'
 const Publications = () => {
 
   return (
-    <div className="container home-container publications-container">
-        <div className="row text-center publications-container">
-            <div className="col-3"/>
-            <div className="col-6">
-                <div style={{ marginTop: '5%' }}>
+    <div className="container home-container">
+        <div className="row text-center" style={{height:"50vh"}}>
+            <div className="col-12 col-md-3"/>
+            <div className="col-12 col-md-6 m-auto">
+                <div>
                    <h1> Contact </h1>
                    <p style={{textAlign:"center"}}> I am always looking to take on interesting projects. </p>
                    <p style={{textAlign:"center"}}> The best way to reach out is via LinkedIn: </p>
                    <a href="https://www.linkedin.com/in/alexjsouthgate/">https://www.linkedin.com/in/alexjsouthgate/</a>
                 </div>
             </div>
-            <div className="col-3"/>
+            <div className="col-12 col-md-3"/>
         </div>
     </div>
   );
