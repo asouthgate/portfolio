@@ -1,4 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
+import './effects.css'
+
+const SpinEffect = ({ children, className = '' }) => {
+  return (
+    <div className={`spin-effect ${className}`}>
+      {children}
+    </div>
+  );
+};
 
 const FloatEffect = ({ children, className = '' }) => {
   return (
@@ -35,4 +44,4 @@ const TypingEffect = ({ text, speed = 100, as: Component = 'div', delay = 0 }) =
   return <Component>{displayedText}</Component>;
 };
 
-export default FloatEffect;
+export { SpinEffect, FloatEffect };

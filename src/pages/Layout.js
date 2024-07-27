@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Topbar from './Topbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './layout.css';
+import './common.css';
 
 const Layout = () => {
   return (

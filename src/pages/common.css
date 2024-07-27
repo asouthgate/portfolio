@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.projects-container {
+    background: #515657;
+}
+
+p {
+ text-align: justify;
+ color: #201c59;
+ font-family: "Exo", sans-serif;
+}
+
+h1 {
+  color: #272b28;
+}
+
+h4 {
+  color: #9d9dfa;
+}

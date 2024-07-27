@@ -1,8 +1,8 @@
 import { React, useState } from 'react';
 import { getEvent } from '../api/requests'
 import exampleImage from '../assets/site-image.png';
-import FloatEffect from '../FloatEffect';
-import './home.css'
+import { FloatEffect } from '../Effects';
+import './common.css'
 
 
 const Publications = () => {

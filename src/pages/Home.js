@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
-import './home.css';
+import './common.css';
 import { getEvent } from '../api/requests'
-import exampleImage from '../assets/site-image.png';
-import FloatEffect from '../FloatEffect';
+import rainCloud from '../assets/raincloud.png';
+import { FloatEffect } from '../Effects';
 import Publications from './Publications';
 import Projects from './Projects';
 
@@ -29,7 +29,7 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
                 </div>
                 <div style={{ fontSize: '3em', textAlign: 'center'}}>
                   <FloatEffect className="additional-class">
-                      <img src={exampleImage} alt="Example" className="img-fluid" />
+                      <img src={rainCloud} alt="Example" className="img-fluid" />
                   </FloatEffect>
                 </div>
 

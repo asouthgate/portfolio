@@ -1,0 +1,48 @@
+.project {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.project h1 {
+    margin-top: 1%;
+}
+
+.mathbio-projects h1 {
+    text-align: left;
+}
+
+.mathbio-projects {
+    background: linear-gradient(to right, grey, transparent);
+}
+
+.intro {
+    background: linear-gradient(to left, grey, transparent);
+}
+
+.intro h1 {
+    text-align: right;
+}
+
+.cloud-projects {
+}
+
+.gravwave-projects {
+}
+
+.gravwave-projects h1 {
+    text-align: left;
+}
+
+.cloud-projects h1 {
+    text-align: right;
+}
+
+.bioinformatics-projects {
+    background: linear-gradient(to right, grey, transparent);
+}
+
+.bioinformatics-projects h1 {
+  text-align: left;
+}
+
+
