@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.ef85bcad.css",
-    "main.js": "/portfolio/static/js/main.5d83e17d.js",
+    "main.js": "/portfolio/static/js/main.20b944db.js",
     "static/media/resistance-drawings.png": "/portfolio/static/media/resistance-drawings.f04528f0ca4410e2be92.png",
     "static/media/climb-paper.png": "/portfolio/static/media/climb-paper.d5109131f9013b10ec36.png",
     "static/media/cog-uk.png": "/portfolio/static/media/cog-uk.5c57cda9765498bcad8e.png",
@@ -9,10 +9,10 @@
     "index.html": "/portfolio/index.html",
     "static/media/gitlab.svg": "/portfolio/static/media/gitlab.9c7ef3eedb2538843845796b382a4218.svg",
     "main.ef85bcad.css.map": "/portfolio/static/css/main.ef85bcad.css.map",
-    "main.5d83e17d.js.map": "/portfolio/static/js/main.5d83e17d.js.map"
+    "main.20b944db.js.map": "/portfolio/static/js/main.20b944db.js.map"
   },
   "entrypoints": [
     "static/css/main.ef85bcad.css",
-    "static/js/main.5d83e17d.js"
+    "static/js/main.20b944db.js"
   ]
 }
