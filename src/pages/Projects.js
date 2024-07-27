@@ -129,8 +129,8 @@ const BioinformaticsProjects = () => {
   return ( 
     <div>
     <div className='row bioinformatics-projects project'>
-        <div className='col-12 col-md-6'>
           <h1> Bioinformatics </h1>
+        <div className='col-12 col-md-6'>
           <p>
             Last, but not least, I am an expert bioinformatician. I hold a PhD in algorithms and 
             statistical modelling for whole-genome sequence data from viruses such as influenza 
@@ -154,7 +154,7 @@ const BioinformaticsProjects = () => {
             <li>Presentations</li>
           </ul>
         </div>
-        <div className='col-12 col-md-6' style={{padding: "2% 2% 2% 2%"}}>
+        <div className='col-12 col-md-6'>
            <img src={cogUK} alt="Example" className="img-fluid" />
         </div>
     </div>
