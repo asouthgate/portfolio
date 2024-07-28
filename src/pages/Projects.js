@@ -68,11 +68,11 @@ const MathBioProjects = () => {
         <div className='col-12 col-md-6'>
           <h1> Geospatial Databases </h1>
           <p>
-            I have spent some time working on an interesting project in spatial ecology. This project 
+            I spent some time working on an interesting project in spatial ecology. This project 
             concerns the combination of circuit theory modelling and large LIDAR datasets to predict
-            ecological migration patterns. I developed a webapp with a data pipeline backend performing
+            ecological migration patterns. I developed a webapp with a backend performing
             scientific calculations and interfacing with PostGIS. A large proportion of this project
-            was database organisation and optimisation.
+            was data curation and database optimisation.
           </p>
         <ul>
           <li>PostGres & PostGIS</li>
@@ -146,6 +146,8 @@ const BioinformaticsProjects = () => {
           </p>
           <ul>
             <li>Python, R, Bash</li>
+            <li>Pipeline testing</li>
+            <li>CI/CD</li>
             <li>Statistical modelling </li>
             <li>Data analysis </li>
             <li>Bayesian modelling</li>
@@ -173,8 +175,8 @@ const Intro = () => {
                     <img src={BlackHoleOuter} alt="Foreground" className="image background" />
                   </SpinEffect>
                   {Array.from({ length: 1 }).map((_, i) => {
-                    const speed = `${10 + (i + 1) * 3}s`;
-                    const offset = `${i * 30}deg`;
+                    const speed = `${40 + (i + 1) * 10}s`;
+                    const offset = `${30 + i * 30}deg`;
                     return (
                       <SpinEffect key={i} className="image background" speed={speed} offset={offset}>
                         <img src={BlackHoleOuter} alt={`Spin effect ${i}`} className="image background" />
@@ -191,7 +193,7 @@ const Intro = () => {
               <p> 
                 I have worked on a diverse range of projects, 
                 in a diverse range of scientific disciplines. 
-                Some may say too diverse. On the contrary! I am 
+                I would argue that this is a strength. I am 
                 a problem solver at heart, an excellent
                 self-directed learner, and I take
                 initiative when things need figuring out. I am
@@ -201,17 +203,18 @@ const Intro = () => {
                 fulfill their requirements.
               </p>
               <p>
-                I also still help publish papers, from time to time.
-                Most of the papers I have contributed to are research in
+                On occasion, I contribute to papers, sometimes in top journals.
+                Most of these are research in
                 healthcare, genomics, epidemiology, immunology, or something
-                similar. A lot of these papers are in top journals! I have a good
+                similar. I have a good
                 understanding of research data, and large scale research
                 systems.
               </p>
               <p>
-                I also won a 2023 fellowship from the Software Sustainability Institute!
-                Testing is important to me. I am champion the need for unit tests
-                and CI/CD in scientific organisations. There is work to do.
+                I also won a 2023 fellowship from the Software Sustainability Institute, highlighting
+                my passion for developing quality code in research. Sometimes this is a negotiation.
+                I champion the need for unit tests and CI/CD in scientific organisations. 
+                Whilst sometimes research code can be a pleasant surprise, there is still work to do.
               </p>
            </div>
         </div>
