@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.937334e7.css",
-    "main.js": "/portfolio/static/js/main.b968e61c.js",
-    "static/media/resistance-drawings.png": "/portfolio/static/media/resistance-drawings.2fa74d356246d1090f27.png",
-    "static/media/climb-paper.png": "/portfolio/static/media/climb-paper.d5109131f9013b10ec36.png",
-    "static/media/cog-uk.png": "/portfolio/static/media/cog-uk.5c57cda9765498bcad8e.png",
-    "static/media/github.svg": "/portfolio/static/media/github.a2dcecaacdba94077f71818776dd805b.svg",
-    "index.html": "/portfolio/index.html",
-    "static/media/gitlab.svg": "/portfolio/static/media/gitlab.9c7ef3eedb2538843845796b382a4218.svg",
-    "main.937334e7.css.map": "/portfolio/static/css/main.937334e7.css.map",
-    "main.b968e61c.js.map": "/portfolio/static/js/main.b968e61c.js.map"
+    "main.css": "/static/css/main.937334e7.css",
+    "main.js": "/static/js/main.d4d1e16a.js",
+    "static/media/resistance-drawings.png": "/static/media/resistance-drawings.2fa74d356246d1090f27.png",
+    "static/media/climb-paper.png": "/static/media/climb-paper.d5109131f9013b10ec36.png",
+    "static/media/cog-uk.png": "/static/media/cog-uk.5c57cda9765498bcad8e.png",
+    "static/media/github.svg": "/static/media/github.a2dcecaacdba94077f71818776dd805b.svg",
+    "index.html": "/index.html",
+    "static/media/gitlab.svg": "/static/media/gitlab.9c7ef3eedb2538843845796b382a4218.svg",
+    "main.937334e7.css.map": "/static/css/main.937334e7.css.map",
+    "main.d4d1e16a.js.map": "/static/js/main.d4d1e16a.js.map"
   },
   "entrypoints": [
     "static/css/main.937334e7.css",
-    "static/js/main.b968e61c.js"
+    "static/js/main.d4d1e16a.js"
   ]
 }
