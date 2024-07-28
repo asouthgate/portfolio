@@ -10,7 +10,7 @@ import Projects from './pages/Projects';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import { HashRouter, Navigate, Routes, Route } from 'react-router-dom';
 
 import packageJson from '../package.json'; // dont want to duplicate home var
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 /**
  * App component represents the root of the application.
- * Routes are defined here using BrowserRouter.
+ * Routes are defined here using HashRouter.
  * E.g. /search to go to the search page.
  */
 export default function App() {
@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/home" />} />
@@ -45,9 +45,9 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
-        <Route path="/*" element={<NotFound />} />
+        <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
