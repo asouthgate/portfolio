@@ -32,7 +32,7 @@ $(document).ready(function () {
 export default function App() {
 
   useEffect(() => {
-    document.title = 'Alex Southgate - Research Software Engineer';
+    document.title = 'Alex Southgate - Bioinformatician & Research Engineer';
   }, []);
 
   return (
