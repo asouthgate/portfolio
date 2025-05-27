@@ -4,11 +4,11 @@
 }
 
 .navbar-custom .nav-link {
-  color: white;
+  color: #c7c6bd;
 }
 
 .navbar-custom .nav-link:hover {
-  color: #573e1b;
+  color: #e3d598;
 }
 
 .navbar-custom .navbar-toggler {

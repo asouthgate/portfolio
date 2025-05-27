@@ -18,10 +18,10 @@ const Topbar = () => {
               <Link to="/home" className="nav-link"> 1/ Home </Link>
             </li>
             <li className="nav-item">
-              <Link to="/projects" className="nav-link"> 2/ Projects </Link>
+              <Link to="/publications" className="nav-link"> 2/ Publications </Link>
             </li>
             <li className="nav-item">
-              <Link to="/publications" className="nav-link"> 3/ Publications </Link>
+              <Link to="/blog" className="nav-link"> 3/ Blog </Link>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link"> 4/ Contact </Link>

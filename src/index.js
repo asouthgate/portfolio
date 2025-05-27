@@ -7,6 +7,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // bundle includes Popper
 import Layout from './pages/Layout';
 import Publications from './pages/Publications';
 import Projects from './pages/Projects';
+import Blog from './pages/Blog';
+
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
@@ -42,6 +44,7 @@ export default function App() {
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/blog" element={<Blog />} /> 
           <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="/*" element={<Navigate to="/home" />} />
