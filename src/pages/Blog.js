@@ -67,7 +67,7 @@ const TestEntry = () => {
                  \\frac{\\delta S}{\\epsilon} = \\int_a^b \\frac{y'\\eta'}{\\sqrt{1+y'^2}} dx + O(\\epsilon)
               $$`}
             </MathJax>
-            When epsilon goes to zero, we expect to be zero on the RHS. This is the usual procedure. With a bit of work and attention to detail (which I probably lack for this), we can show this needs to be constant. I will leave this calculus to the reader. As it happens, it's possible to derive a more broad rule that allows us to avoid this analysis: the Euler-Lagrange equation. Given a functional with integrand (Lagrangian) of the form:
+            When epsilon goes to zero, we expect to be zero on the RHS. This is the usual procedure. With a bit of work and attention to detail (which I probably lack for this), we can show that y needs to be constant. I will leave this calculus to the reader. As it happens, it's possible to derive a more broad rule that allows us to avoid this analysis: the Euler-Lagrange equation. Given a functional with integrand (Lagrangian) of the form:
         </p>
         <p>
             <MathJax inline>{
@@ -117,7 +117,7 @@ const TestEntry = () => {
             This constant depends on the domain of f.
         </p>
         <p>
-            In my next post I will explore how this is applied within models of biological systems.
+            Hopefully it's possible to see how useful this method can be in general. Traditionally it has been used to derive paths in mechanical systems. For example, we might want to know the position of a spring as a function of t in an oscillating system. As it turns out, this approach is often easier than traditional inspection of forces, especially when we start examining systems with constraints or different coordinate systems. But the principle is also more general. In my next post I will explore how this could be applied to models of biological systems.
         </p>
       </div>
       <div className='col-6 col-md-6'>
