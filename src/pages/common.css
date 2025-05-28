@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-  background: radial-gradient(circle, #141517, #14161a);
+  background: radial-gradient(circle, #14161a, #14161a);
   color: #ffffff;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -36,5 +36,8 @@ a {
 }
 
 .MJX-TEX {
+  display: block;  /* Or inline-block if needed */
+  margin: 0 auto;  /* This helps for block-level centering */
   color: #d9d3ba;
+  text-align: center;
 }
