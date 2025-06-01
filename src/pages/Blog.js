@@ -174,10 +174,18 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
               {`$$
                 \\begin{align}
                 p_i & = \\frac{\\partial L}{\\partial q_i'}\\\\
+                \\end{align}
+              $$`}
+            </MathJax>
+
+            <MathJax>
+              {`$$
+                \\begin{align}
                 H & = \\sum_i p_i q'_i - L
                 \\end{align}
               $$`}
             </MathJax>
+
             
             We can move to describing a _phase_space_, with coordinates described by positions and momenta, (q_i, p_i). The usual description in terms of position, velocity, time, is the configuration space. Changing spaces, we have an action analogous to previous one. We can see from the definition of H that:
 
@@ -224,22 +232,12 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
               $$`}
             </MathJax>
 
-            Lastly, the Hamiltonian action is simply the regular action with the substitution (this will be important later):
-
-            <MathJax>
-              {`$$
-                \\begin{align}
-                S = \\int L dt = \\int pq' - L dt
-                \\end{align}
-              $$`}
-            </MathJax>
-
         </p>
 
         <h2> Pontryagin's maximum principle </h2>
         
         <p>
-        Unfortunately, we're close, but we're not out of the woods yet. There is another layer to this still (althouogh in this case, Wikipedia has a relatively easy summary [3]). Let's say we have a usual functional, and some quantity x(t) which we take to be a path in the usual sense. Previously, we were looking for the path that maximised or minimised something over the course of that path. This time, let's say we also have some quantity u(t), which we refer to as a control variable. Perhaps this can be an intervention, or controls for a vehicle. We have a slightly new problem:
+        Unfortunately, despite being close to the end, we are in the most complex, difficult part of the woods, the furthest away from basic calculus. There is another layer to this still (although in this case, Wikipedia has a relatively good summary [3]). Let's say we have a usual functional, and some quantity x(t) which we take to be a path in the usual sense. Previously, we were looking for the path that maximised or minimised something over the course of that path. This time, let's say we also have some quantity u(t), which we refer to as a control variable. Perhaps this can be an intervention, or controls for a vehicle. We have a slightly new problem:
 
             <MathJax>
               {`$$
@@ -261,7 +259,7 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
               $$`}
             </MathJax>
             
-            Which just means that the path has to take values from some set of valid controls. Now, fortunately we built some intuition for constraints already. At this point, Wikipedia defines the Pontryagin Hamiltonian:
+            Which just means that the path has to take values from some set of valid controls. Now, fortunately we built some intuition for constraints already. At this point, it is usual to define the Pontryagin Hamiltonian:
 
             <MathJax>
               {`$$
@@ -269,7 +267,7 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
               $$`}
             </MathJax>
 
-            This looks a bit like the Hamiltonian pq - L, with lambda in place p, but there is a difference in sign. This is a bit confusing, but we can spot a pattern. Recall:
+            This is new, but it looks a bit like the Hamiltonian pq - L, with lambda in place p, but there is a difference in sign. This is a bit confusing, but we can spot a pattern. When we are abstracting away complexity, a really good method is to reduce it to something that we already learned. This is analogous to the DRY principle in some sense: keep the complexity down by reusing system components. Recall:
 
             <MathJax>
               {`$$
@@ -293,46 +291,12 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
 
             <MathJax>
               {`$$ \\begin{split}
-                - \\lambda' & = \\partial_x \\overline H = \\lambda(t) \\partial_x f(x, u) + \\partial_x L \\\\
-                x' & = \\partial_\\lambda \\overline G =  f(x, u) \\\\
+                - \\lambda' & = \\partial_x  H = \\lambda(t) \\partial_x f(x, u) + \\partial_x L \\\\
+                x' & = \\partial_\\lambda H =  f(x, u) \\\\
               \\end{split} $$`}
             </MathJax>
             
-            The first of which happens to be one of three conditions for optimal control, and the second is just our constraint. There are two more conditions, although in this case, I cannot make a connection to something from earlier. Sometimes, we have to go on trust. The next condition is that for the optimal control, our Hamiltonian must be pointwise minimal for all t and u. This seems surprising to me, as it seems to imply the global optimal control is also the local one. 
-
-            <MathJax>
-              {`$$ \\begin{split}
-                \\overline{G}(x^*, u^*, \\lambda^*, t) <= \\overline{G}(x, u, \\lambda, t)
-              \\end{split} $$`}
-            </MathJax>
-
-            Lastly:
-
-            <MathJax>
-              {`$$ \\begin{split}
-                \\lambda(T) = \\partial_x \\Psi (x(T))
-              \\end{split} $$`}
-            </MathJax>
-
-            Which emerges from the full functional, integrating by parts:
-
-            <MathJax>
-              {`$$ \\begin{split}
-                \\overline{S} & = \\int L + \\lambda(t)(x' - f) dt \\\\
-                  & = \\int L - \\lambda f dt + \\int \\lambda(t) x' dt \\\\
-                  & = \\int L - \\lambda f  - \\lambda'x dt + \\lambda x|_0^T\\\\
-              \\end{split} $$`}
-            </MathJax>
-
-            Now, if we want this functional to be equivalent to our original stated problem, we need:
-
-            <MathJax>
-              {`$$ \\begin{split}
-                  \\Psi(x(T)) & = \\lambda x|_0^T\\\\
-                  \\partial_x \\Psi(x(T)) = \\lambda(T) \\
-              \\end{split} $$`}
-            </MathJax>
-
+            The first of which happens to be one of three conditions for optimal control, and the second is a reappearance of our constraint. The other two conditions are a bit unnecessary for our intuition, so I won't state them here. In part 2, I will use the understanding we have built here to discuss a few papers.
 
         </p>
         
