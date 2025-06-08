@@ -14,6 +14,8 @@ import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
 import { HashRouter, Navigate, Routes, Route } from 'react-router-dom';
 
+import blogRoutes from './pages/routes/BlogRoutes';
+
 import packageJson from '../package.json'; // dont want to duplicate home var
 
 // Ensure jQuery is available globally
@@ -44,8 +46,8 @@ export default function App() {
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/publications" element={<Publications />} />
-          <Route path="/blog" element={<Blog />} /> 
           <Route path="/contact" element={<Contact />} />
+          {blogRoutes}
         </Route>
         <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>

@@ -20,8 +20,22 @@ const Topbar = () => {
             <li className="nav-item">
               <Link to="/publications" className="nav-link"> 2/ Publications </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/blog" className="nav-link"> 3/ Blog </Link>
+            <li className="nav-item dropdown custom-dropdown-menu">
+              <a
+                href="#"
+                className="nav-link nav-item dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                3/ Blog
+              </a>
+              <ul className="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
+                <li><Link to="/a-walk-through-unfamiliar-science-part-1" className="dropdown-item"> A walk through unfamiliar science, part 1 </Link></li>
+                <li><Link to="/option2" className="dropdown-item">Option 2</Link></li>
+                <li><Link to="/option3" className="dropdown-item">Option 3</Link></li>
+              </ul>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link"> 4/ Contact </Link>
