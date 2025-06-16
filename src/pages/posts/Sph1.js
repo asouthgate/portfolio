@@ -50,11 +50,11 @@ export default function Sph1() {
 
       The first term, f, is the momentum flux. What is this? Fluid itself carries momentum, it is one of the quantities we model moving between cells. A giant wave carries a lot of momentum. This travels by advection, and is proportional to the difference in velocity between neighbors. <br/><br/>
 
-    The second term is less intuitive, representing a force in the plane of the face; put your hands together and slide one up and one down. This is 'shearing', and is the basis of viscosity in fluids. It causes velocity to diffuse out as the fluid drags itself around the place. For highly viscous fluids, this is more obvious. <br/><br/>
+    The second term is less intuitive, representing a force in the plane of the face. This is 'shearing', and is the basis of viscosity in fluids. It causes velocity to diffuse out as the fluid drags itself around the place. For highly viscous fluids, this is more obvious. <br/><br/>
 
-    The final component is something I find interesting. In a system that begins with only velocity in one direction, say along the x axis, advection and viscosity can cause velocity to spread around an exchange between cells, but velocity in the y axis will always be zero. We need, mathematically, some way for velocity in the x direction to become velocity in the y direction, leading to circulation as in real fluids. I think this is quite deep. Mathematically, if I recall correctly, without this the velocity field will be irrotaional; there will be no circulation, whirls, vortexes, or anything interesting (assuming initial conditions in one direction) <br/><br/>
-
-      This final contribution, h, is also our connection to thermodynamics. It's actually the negative spatial gradient of the pressure. As fluid flows into a region, the pressure will build, causing a force that pushes in all directions! Now, if this is developed a bit further, we can arrive at the Navier-Stokes equations. But it's a bit too complicated for me & this blog. See <a href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations"> the Wikipedia article </a>. Or, see the <a href="https://en.wikipedia.org/wiki/Euler_equations_(fluid_dynamics)"> Euler equations </a>, which govern incompressible flows in which pressure forces transmit instantaneously, and mathematically is a bit simpler. <br/><br/>
+    The final component is something I find interesting. In a system that begins with only velocity in one direction, say along the x axis, advection and viscosity can cause velocity to spread around and exchange between cells, but velocity in the y axis will always be zero. Mathematically, if I recall correctly, without pressure force the velocity field will be irrotational; there will be no circulation, whirls, vortexes, or anything interesting. This final contribution, h, is also our connection to thermodynamics. It's actually the negative spatial gradient of the pressure. As fluid flows into a region, the pressure will build, causing a force that pushes in all directions. If we start with only x velocity, pressure will build and become x and y velocity. <br/><br/>
+    
+    If this is developed a bit further, we can arrive at the Navier-Stokes equations. But it's a bit too complicated for me & this blog. <br/><br/>
 
       To summarise, if we want to simulate a decent looking fluid:
       <ul>
@@ -69,15 +69,17 @@ export default function Sph1() {
       <h3> Smoothed particles </h3>
         
       <p>
-        In SPH, the situation is surprisingly similar, except for the fact that we no longer have a fixed grid. Instead, we have a finite set of particles which serve as dynamic, grid points. Then, when we want to know the value of any quantity at time t, we average over nearby particles. The particles themselves are not water molecules, but points that flow along with the fluid that we use to interpolate our quantities of interest. The interesting dynamics are quite similar. A crucial component of this is that we use some _kernel_ function to do our interpolation. This is a function like a probability density function that integrates to one. Any quantity is then averaged over other particles (<a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> see Wikipedia for some details </a>):
+        In SPH, the situation is similar, except for the fact there is no longer a fixed grid. Instead, a finite set of particles serve as dynamic grid points. When we want to know the value of any quantity at time t, we average over nearby particles. The particles themselves are not water molecules, but points that flow along with the fluid that we use to interpolate our quantities of interest. <br/><br/>
+
+        A crucial component of this is that we use some _kernel_ function to do our interpolation. This is a function like a probability density function. Any quantity is then averaged over other particles (<a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> see Wikipedia for some details </a>):
 
         <MathJax>
           {`$$
-            E[q(x)] = \\int q(y) W(|y-x|) dV(y) \\approx \\sum_{j \\in particles} V_j^t q_j^t W(|y_j - x|)
+            \\hat q(x) = \\int q(y) W(|y-x|) dV(y) \\approx \\sum_{j \\in particles} V_j^t q_j^t W(|y_j - x|)
           $$`}
         </MathJax>
 
-    Here, I have chosen to define this as an expected value. This might not be technically accurate (depending on the properties of W), but it helps me to think about it. Furthermore, if the chosen kernel is "compact" (just means it is zero outside of a finite region), only local information is required to compute the average. If you look at W like a probability density, we are computing the expectation of some quantity. This can be a density, or it can be approximated but a set of finite points around the place. Now, just like before, we have a few quantities, including velocity, density, and pressure. How do we deal with them?
+    It's just averaging or interpolation. If the chosen kernel is "compact" (zero outside of a finite region), only local information is required to compute the average. Just like before, we have a few quantities, including velocity, density, and pressure. How do we deal with them?
 
       <ul>
         <li> Continuity doesn't really feature anymore. In a similar-ish way, with a compact kernel we require only local information when updating particle quantities. </li>
@@ -86,7 +88,7 @@ export default function Sph1() {
         <li> Finally, we have pressure, like before, which is also a quantity carried by the particles. The simplest method for this involves computing it as a function of particle densities, as an equation of state. </li>
       </ul>
 
-    All we have to do in our main loop is compute density, forces, and pressure. We then apply the forces using a leapfrog integrator. SPH has some advantages and disadvantages when compared to CFD. Firstly, it's much better at simulating moving bodies and fluid interfaces, such as a droplet in air. Using the CFD grid method, it's not clear how to represent interfaces. It can be used for simulation of multi-phase fluids. On the other hand, it's also considered less realistic. 
+    All we have to do in our main loop is compute density, forces, and pressure. We then apply the forces using a leapfrog integrator. SPH has some advantages and disadvantages when compared to CFD. Firstly, it's much better at simulating moving bodies and fluid interfaces, such as a droplet in air. On the other hand, it's also considered less realistic. 
 
       </p>
 

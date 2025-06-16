@@ -32,9 +32,8 @@ const Topbar = () => {
                 3/ Blog
               </a>
               <ul className="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
-                <li><Link to="/a-walk-through-unfamiliar-science-part-1" className="dropdown-item"> A walk through unfamiliar science, part 1 </Link></li>
-                <li><Link to="/option2" className="dropdown-item">Option 2</Link></li>
-                <li><Link to="/option3" className="dropdown-item">Option 3</Link></li>
+                <li><Link to="/a-walk-through-unfamiliar-science-part-1" className="dropdown-item"> A (casual) walk through unfamiliar science, part 1 </Link></li>
+                <li><Link to="/smoothed-particle-hydrodynamics" className="dropdown-item"> (Simple and) smoothed particle hydrodynamics </Link></li>
               </ul>
             </li>
             <li className="nav-item">
