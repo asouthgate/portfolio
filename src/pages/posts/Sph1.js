@@ -10,9 +10,11 @@ export default function Sph1() {
     <div>
       <h1> Smoothed particle hydrodynamics </h1>
       <h2> <i> Updated 2025-06-16 </i> </h2>
-      <h3> The basis for fluid simulation: 4 concepts </h3>
+      <h3> Four features of realistic flows </h3>
       <p>
-            Consider a flowing river with a fixed coordinate axis. Any point in the body of water will have some current passing through, captured by a velocity v(x, t). How can we simulate flow? The traditional method for simulating fluids is "computational fluid dynamics" (CFD). In CFD, the continuous fluid is approximated by a grid of finite points. CFD is too complex for this post and takes many years to study. Instead, let's ask: how do we simulate a realistic-looking fluid?
+            This post is about smoothed particle hydrodynamics, a technique from astrophysics [1] [this paper has been cited over 10k times]. In order to understand the method, I want to start somewhere else, by asking what features make a realistic fluid simulation. There is a lot of complexity in this subject, but I believe that most people have an intuition for the behaviour of fluids. <br/><br/>
+
+            For a flowing river with a fixed coordinate axis, any point in the body of the water will have some current passing through, captured by a velocity v(x, t). The traditional method for simulating this function is "computational fluid dynamics" (CFD). In CFD, the continuous fluid is approximated by a grid of finite points.
 
             <MathJax>
               {`$$
@@ -20,9 +22,9 @@ export default function Sph1() {
               $$`}
             </MathJax>
 
-            If v were a constant vector in some direction, we would have a constant flow. If it were some constant vector multiplied by time, it would be a unidirectional flow that grows linearly in strength. It could be any wacky function and correspond to some alien system. But what kind of mapping will result in something that looks real? A lot of realism can be captured by "conservation", "continuity", Newton's laws, and thermodynamic pressure. <br/><br/>
+            If v were a constant vector in some direction, there would be constant flow. If it were some constant vector multiplied by time, it would be a unidirectional flow that grows linearly in strength. It could be any wacky function and correspond to some alien system. But what kind of mapping will result in something that looks real? A lot of realism can be captured by "conservation", "continuity", Newton's laws, and thermodynamic pressure. <br/><br/>
 
-        Mass is conserved. If you bake a cake, the cake cannot weigh more than the ingredients you put in (it can weigh a bit less if some gas escapes). You can slice the cake any way, and the sum of the pieces will weigh the same as the whole. For a simulated fluid, mass and momentum should be conserved like in regular physics.
+        Mass is conserved. If you bake a cake, the cake cannot weigh more than the ingredients you put in (it can weigh a bit less if some gas escapes). You can slice the cake any way, and the sum of the pieces will weigh the same as the whole. For a simulated fluid, mass and momentum should be conserved.
 
             <MathJax>
               {`$$
@@ -30,7 +32,7 @@ export default function Sph1() {
               $$`}
             </MathJax>
     
-        Continuity basically just means that _teleportation_is_impossible_. If a river flows into a very narrow region, fluid must flow through the narrow region, and cannot teleport through. Conservation does not preclude teleportation, but continuity does. For a grid, exchange of mass or momentum must occur at the faces between cells:
+        Continuity means that _teleportation_is_impossible_. If a river becomes narrow, fluid must flow through the narrow region, and cannot teleport through. Conservation does not preclude teleportation, but continuity does. For a grid, exchange of mass or momentum must occur at the faces between cells:
 
             <MathJax>
               {`$$
@@ -38,9 +40,9 @@ export default function Sph1() {
               $$`}
             </MathJax>
 
-      where q_ij is the net amount of quantity exchanged between i and j in a small time step. It just means that for a very small time interval, the amount of something lost or gained must be the amount transferred via neighbors. Now, for a large time interval, this is not true. <br/><br/>
+      where q_ij is the net amount of quantity exchanged between i and j in a small time step. It just means that for a very small time interval, the amount of something lost or gained must be the amount transferred via neighbors. For a large time interval, this is not true. <br/><br/>
 
-      We don't need much more to get a system that behaves like a fluid. All we need now is to think about Newton's laws and some basic thermodynamics. Firstly, momentum is conserved, and forces are equal and opposite:
+      We don't need much more to get a system that behaves like a fluid. What's necessary can be seen in the 'momentum equation':
 
             <MathJax>
               {`$$
@@ -48,7 +50,7 @@ export default function Sph1() {
               $$`}
             </MathJax>
 
-      The first term, f, is the momentum flux. What is this? Fluid itself carries momentum, it is one of the quantities we model moving between cells. A giant wave carries a lot of momentum. This travels by advection, and is proportional to the difference in velocity between neighbors. <br/><br/>
+      The first term, f, is the momentum flux. What is this? Fluid itself carries momentum, it is one of the quantities we model moving between cells. A giant wave carries a lot of momentum. This term captures advection, and is proportional to the difference in velocity between neighbors. <br/><br/>
 
     The second term is less intuitive, representing a force in the plane of the face. This is 'shearing', and is the basis of viscosity in fluids. It causes velocity to diffuse out as the fluid drags itself around the place. For highly viscous fluids, this is more obvious. <br/><br/>
 
@@ -71,7 +73,7 @@ export default function Sph1() {
       <p>
         In SPH, the situation is similar, except for the fact there is no longer a fixed grid. Instead, a finite set of particles serve as dynamic grid points. When we want to know the value of any quantity at time t, we average over nearby particles. The particles themselves are not water molecules, but points that flow along with the fluid that we use to interpolate our quantities of interest. <br/><br/>
 
-        A crucial component of this is that we use some _kernel_ function to do our interpolation. This is a function like a probability density function. Any quantity is then averaged over other particles (<a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> see Wikipedia for some details </a>):
+        A crucial component of this is that we use some _kernel_ function to do our interpolation. This is a function like a probability density function, and integrates to one [1]. Any quantity is then averaged over other particles (see [1] or <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> Wikipedia </a> for some details):
 
         <MathJax>
           {`$$
@@ -83,7 +85,7 @@ export default function Sph1() {
 
       <ul>
         <li> Continuity doesn't really feature anymore. In a similar-ish way, with a compact kernel we require only local information when updating particle quantities. </li>
-        <li> Advection this time come for free, given that the particles themselves are simulated classically & move around. </li>
+        <li> Advection this time comes for free, given that the particles themselves are simulated classically & move around. </li>
         <li> Viscosity, giving diffusion of momentum, this time is a bit more complex or fuzzy. We use a diffusive function called 'artificial viscosity' to compute viscous forces at a particular time. It's just a fudge, at the end of the day. </li>
         <li> Finally, we have pressure, like before, which is also a quantity carried by the particles. The simplest method for this involves computing it as a function of particle densities, as an equation of state. </li>
       </ul>
@@ -96,6 +98,11 @@ export default function Sph1() {
       <p>
       Conservation was mentioned a lot in the first part of this post. I don't really mention it in the second, but in order to get a system in which momentum is conserved, we do need our rules to have a particular form. In a previous blog post I talked about functionals and the principle of least action. As it happens, if a particular Lagrangian is taken in the context of SPH particles, the momentum equation that is typically used can be derived. I won't reproduce it here, but the <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> Wikipedia article </a> has a good description.
       </p>
+
+      <h2>References</h2>
+      <ul>
+        <li> Gingold, R. A., & Monaghan, J. J. (1977). Smoothed particle hydrodynamics: theory and application to non-spherical stars. Monthly notices of the royal astronomical society, 181(3), 375-389. </li>
+      </ul>
 
     </div>
   );

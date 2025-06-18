@@ -9,21 +9,21 @@ export default function Walk1() {
   return (
     <div>
       <h1> A walk through unfamiliar science, part 1 </h1>
-      <h2> <i> Updated 2025-06-01 </i> </h2>
+      <h2> <i> Updated 2025-06-17 </i> </h2>
         <p>
 
-Due to the nature of my profession, sometimes I have to work on code in a scientific field far from where I come from. Sometimes, I also do this to keep my mind occupied; recently, I have been looking at a few papers applying control theory to biological systems. For example, [2] deals with time-optimal controls in epidemiology, where the authors pose the question: how can we reduce the length of epidemics by exerting our control at the exact right times? As usual, at first, I did not understand these papers. It can be challenging to explore so far from what we were trained to do, but there are a few tricks. The first is to maintain a foundation in probability theory, calculus, algorithms, and so on. As an engineer, I am not a master of these subjects, but I keep enough of it with me to allow me to make progress when I want to learn something and apply it in practice. <br/> <br/>
+Sometimes I have to work on code in a scientific field far from my area of expertise. Sometimes, I do this for fun. Recently, I have been looking at a few papers applying control theory to biological systems. For example, [2] deals with time-optimal controls in epidemiology, where the authors ask: how can we reduce the length of epidemics by exerting control at the exact right times? As usual, at first, I did not understand these papers. It can be challenging to explore so far from where we are familiar, but there are a few tricks. The first is to maintain a foundation in probability theory, calculus, algorithms, and so on. As an engineer, I am not a master of these subjects, but I keep enough of it with me to allow me to make progress when I want to learn something and apply it in practice. <br/> <br/>
 
-As an aside, I have always been a person with wide (or unfocused) interests. As a student, without the proper foundations, I spent a long time trying to learn classical and statistical mechanics in order to understand the dynamics of proteins (to that end, video lectures by Leonard Susskind are great). I was quite jealous of physicist friends at the time, often trying to steer my career toward biophysics. In part I suspect this was a kind of immaturity an elitism. With hindsight, it's easy to open up a paper on, for example, immunology, and realise that there is talent and complexity everywhere. We don't do well enough to appreciate diverse talents, which can be found absolutely everywhere in society. It's good to try to break down elitism. <br/> <br/>
+As an aside, I have always done this. As a student, without the proper foundations, I spent a long time trying to learn classical and statistical mechanics in order to understand the dynamics of proteins (video lectures by Leonard Susskind are great). I was jealous of physicist friends at the time, often trying to steer my career toward biophysics. In part I suspect this was a kind of student elitism. This seems like a funny idea now. We don't do well enough to appreciate diverse talents, which can be found everywhere in society. It's good to try to break down elitism. <br/> <br/>
 
-The first "trick" is not really a trick, but a long term commitment to problem solving. On the other hand, the second trick is closer to one, practiced frequently in software engineering: <i> abstraction</i>. This is the process whereby we take complexity, and hide it in a box, so that we can reason about bigger and bigger systems. I strongly recommend that, when learning anything, we attempt to hide as much detail as possible. In mathematics, there is a lot of complexity that I cannot store as an engineer. Building intuition with less formality, and what might be described as "hand waving", is crucial. It is a great exercise to attempt to compress complex subjects down into something simple. <br/> <br/>
+The first "trick" is not really a trick, but a long term commitment to problem solving. The second trick is practiced frequently in software engineering: <i> abstraction</i>. This is the process whereby we recursively hide away complexity, so that we can reason about bigger and bigger systems. In mathematics, there is a lot of complexity that I cannot store as an engineer. I build intuition with less formality, and what might be described as "hand waving". It is a good exercise to attempt to compress complex subjects down into something simple. <br/> <br/>
 
-Here, I'm going to explore the calculus of variations and optimal control. At the beginning of this, I know nothing of optimal control, and only a bit about functionals. I'm going to try to learn this through explaining it in as simple terms as possible, assuming some basic knowledge of calculus. For a proper reference, see [1]. This text is the opposite: thorough and heavy on the math notation. In mathematics like this, there are usually detailed conditions over what formula applies in what cases. This is important in practice, but not so much for the explainer, so I will handwave it away wherever I can.
+Here, I'm going to explore the calculus of variations and optimal control. At the beginning of this, I know nothing of optimal control, and only a bit about functionals. I'm going to try to learn this through explaining it in as simple terms as possible, assuming some basic knowledge of calculus. For a proper reference, see [1]. This text is thorough and heavy on the math notation. In mathematics like this, there are usually detailed conditions over what statements apply in which cases. This is important in practice, but not so much for the explainer, so I will hide it as much as possible.
 
         </p>
         <h2> Stationary action and shortest paths </h2>
         <p>
-            In the calculus of variations, we begin with a principle: stationary action. This is a bit obscure, but it is essentially about finding the path between two points that minimizes something. If we were walking from A to B on a mountain range, we might want to find the path that minimizes our exhaustion. Or, if we were on a flat plane, we might even ask what's the shortest path between two points? Fairly obviously, this is a straight line, and presumably this was proved before the calculus of variations. Still, it can be a good example to demonstrate.
+            In the calculus of variations, we begin with a principle: stationary action. Between two points on a mountain range, what path will minimize exhaustion? Or, even simpler, what's the path with minimal distance? Obviously, this is a straight line, and presumably this was proved before the calculus of variations. Still, it can be a good example to demonstrate.
         </p>
         <p>
             We start by defining the integral over a given path of the arc length. This gives the total length for any path. We don't actually know what the function y is here that maximises this integral. Firstly, remember:
@@ -44,13 +44,13 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
             </MathJax>
         </p>
         <p>
-            Next, we imagine the stationary path. What is the maximum or minimum path? Taking inspiration from regular calculus we know that for a function, the extreme points are those where the derivative is zero. For a vector, the extreme values are those where the gradient vector is zero. What about a continuous path? We can imagine this a bit like a vector of uncountable number of points. So, we take our unknown function, and add a small amount of another arbitrary function (differentiable, zero at the endpoints).
+            Next, we imagine the stationary path. What is the maximum or minimum path? Taking inspiration from regular calculus we know that for a function, the critical points are those where the derivative is zero. For a vector, the extreme values have a gradient vector of zero. What about a continuous path? This is a bit like a vector of uncountable number of points. So, we take our unknown function, and add a small amount of another arbitrary function (differentiable, zero at the endpoints).
             <MathJax>
               {`$$
                 S[y + \\epsilon \\eta] = \\int_a^b \\sqrt{1+(y + \\epsilon \\eta)'^2} dx
               $$`}
             </MathJax>
-            Next, with a Taylor expansion, we get:
+            Next, with a Taylor expansion:
             <MathJax>
               {`$$
                 S[y + \\epsilon\\eta] - S[y] =  \\epsilon\\int_a^b \\frac{y'\\eta'}{\\sqrt{1+y'^2}} dx + O(\\epsilon ^2)
@@ -78,7 +78,7 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
             <MathJax inline>{
                 "\\( \\frac{\\partial L}{\\partial y'} - \\frac{d}{dx} \\frac{\\partial L}{\\partial y} = 0\\)"
             }</MathJax> <br/><br/>
-            I don't prove this as it's a bit long. Sometimes, we have to take things on faith. Usually I will do so for well-known formulae with easy to understand conditions. The EL equation is foundational, widely used, and named after Euler & Lagrange, so I just accept it as fact. Plugging in the arc length here, for example, we get: <br/><br/>
+            I don't reproduce the proof as it's a bit long. Sometimes, we have to take things on faith. Usually I will do so for well-known formulae with easy to understand conditions. The EL equation is foundational, widely used, so I just accept it. Plugging in the arc length here, we get: <br/><br/>
             <MathJax>
               {`$$
                 \\begin{align}
@@ -89,7 +89,7 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
                 \\end{align}
               $$`}
             </MathJax>
-            Now, I haven't shown whether this is a minimum, maximum, or saddle point. Like in regular calculus, this can also be found by looking at the second "variation". But we don't need to look at those details to understand the concepts, so we won't.
+            Now, I haven't shown whether this is a minimum, maximum, or saddle point. Like in regular calculus, this can also be found by looking at the second "variation". But we don't need to look at those details to understand the concepts, so we won't do so here.
         </p>
         <h2> Another example: maximum "entropy" distribution </h2>
         <p>
@@ -115,7 +115,7 @@ Here, I'm going to explore the calculus of variations and optimal control. At th
             This constant depends on the domain of f. So we have shown that the extremum of entropy is in fact a uniform distribution.
         </p>
         <p>
-            Hopefully it's possible to see how useful this method can be in general. Traditionally it has been used to derive paths in mechanical systems. For example, we might want to know the position of a spring as a function of t in an oscillating system. As it turns out, this approach is often easier than traditional inspection of forces, especially when we start examining systems with constraints or different coordinate systems.
+            Hopefully it's possible to see how useful this method can be in general. Traditionally it has been used to derive paths in mechanical systems. For example, the position of a spring as a function of time in an oscillating system. As it turns out, this approach is often easier than traditional inspection of forces, especially when we start examining systems with constraints or different coordinate systems.
         </p>
         <p>
             As an additional note, we saw how integral constraints could be introduced above, and the standard method of using Lagrange multipliers. We can do the same for constraints of the form:
