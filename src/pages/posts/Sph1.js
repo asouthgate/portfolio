@@ -1,4 +1,6 @@
 import { MathJaxContext, MathJax } from 'better-react-mathjax';
+import oilImg from '../../assets/oil.png';
+
 
 export const metadata = {
   title: "Blog1 Foo",
@@ -97,6 +99,15 @@ export default function Sph1() {
       <h3> A quick note on conservation of momentum </h3>
       <p>
       Conservation was mentioned a lot in the first part of this post. I don't really mention it in the second, but in order to get a system in which momentum is conserved, we do need our rules to have a particular form. In a previous blog post I talked about functionals and the principle of least action. As it happens, if a particular Lagrangian is taken in the context of SPH particles, the momentum equation that is typically used can be derived. I won't reproduce it here, but the <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics"> Wikipedia article </a> has a good description.
+      </p>
+      <h3> Application to biological simulations. </h3>
+      <p>
+      I used this method to simulate a fluid with two phases (like oil and water), which will be crucial for simulating biological systems of the kind I am interested in. This isn't many particles, and was rendered in real time to allow interactivity. I will be dropping real-time graphics moving forward, at least for now, and move to the GPU so that we can hopefully increase the number of particles by an order of magnitude. After that, I will introduce more interesting dynamics. <br/>
+          <img src={oilImg} alt="Left: A picture of a droplet of oil & water mixed together, about to fall. Middle: droplet, after crashing. Right: fluid beginning to settle in two layers"   style={{
+    display: 'block',
+    margin: '0 auto',
+    height: 'auto'
+  }} />
       </p>
 
       <h2>References</h2>
