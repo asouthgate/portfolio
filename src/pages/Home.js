@@ -19,8 +19,8 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
   return (
     <div className="container-fluid home-container">
         <div style={{ marginLeft: '5%', marginTop: '0%', marginRight: '5%' }}>
-            <h1 style={{ fontSize: '6em', textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
-            <h2 style={{ fontSize: '3em', textAlign: 'center'}}> Bioinformatician / Research Engineer </h2>
+            <h1 style={{ textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
+            <h2 style={{  textAlign: 'center'}}> Bioinformatician / Research Engineer </h2>
         </div>
     </div>
   );
