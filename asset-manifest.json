@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9f9e7ce1.css",
-    "main.js": "/static/js/main.f6d59b98.js",
+    "main.css": "/static/css/main.d63682f5.css",
+    "main.js": "/static/js/main.41c46919.js",
     "static/media/resistance-drawings.png": "/static/media/resistance-drawings.2fa74d356246d1090f27.png",
     "static/media/oil.png": "/static/media/oil.54e0ab46c121a216c87f.png",
     "static/media/climb-paper.png": "/static/media/climb-paper.d5109131f9013b10ec36.png",
@@ -10,11 +10,11 @@
     "static/media/github.svg": "/static/media/github.a2dcecaacdba94077f71818776dd805b.svg",
     "index.html": "/index.html",
     "static/media/gitlab.svg": "/static/media/gitlab.9c7ef3eedb2538843845796b382a4218.svg",
-    "main.9f9e7ce1.css.map": "/static/css/main.9f9e7ce1.css.map",
-    "main.f6d59b98.js.map": "/static/js/main.f6d59b98.js.map"
+    "main.d63682f5.css.map": "/static/css/main.d63682f5.css.map",
+    "main.41c46919.js.map": "/static/js/main.41c46919.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f9e7ce1.css",
-    "static/js/main.f6d59b98.js"
+    "static/css/main.d63682f5.css",
+    "static/js/main.41c46919.js"
   ]
 }
