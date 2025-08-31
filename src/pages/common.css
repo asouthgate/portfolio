@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
 
 body {
   background: radial-gradient(circle, #14161a, #14161a);
   color: #ffffff;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "VT323", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.38rem; 
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
 }
 
 .projects-container {
@@ -16,7 +23,8 @@ body {
 p {
  text-align: justify;
  color: #afb1cc;
- font-family: "Exo", sans-serif;
+ font-family: "VT323", sans-serif;
+ font-size: 1.38rem;
 }
 
 h1 {
