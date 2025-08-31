@@ -23,7 +23,7 @@ const Topbar = () => {
             <li className="nav-item dropdown custom-dropdown-menu">
               <a
                 href="#"
-                className="nav-link nav-item dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -44,11 +44,11 @@ const Topbar = () => {
         </div>
         <div className="d-flex">
             <a href="https://github.com/asouthgate">
-                <GithubIcon style={{ width: '20px', height: '20px' }}/>
+                <GithubIcon style={{ width: '20px', height: '20px', color: '#fffcc9' }}/>
             </a>
             <div style={{ padding: '8px' }}>  </div>
             <a href="https://gitlab.com/asouthgate1">
-                <GitlabIcon style={{ width: '20px', height: '20px' }}/>
+                <GitlabIcon style={{ width: '20px', height: '20px', color: '#fffcc9' }}/>
             </a>
         </div>
       </div>

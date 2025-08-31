@@ -9,11 +9,25 @@ body {
   font-size: 1.38rem; 
 }
 
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100px; /* scroll vertically */
+  }
+}
+
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  min-height: calc(100vh - 3.5rem);
+  height: auto; /* let it expand if content is taller */
+  background-image: url('../assets/scrollingrain.png');
+  background-repeat: repeat; /* Tile it */
+  background-size: 100px 100px; /* Or scale if needed */
+  animation: scrollBackground 5s linear infinite; /* animate background */
 }
 
 .projects-container {

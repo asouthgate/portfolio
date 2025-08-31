@@ -8,7 +8,7 @@ import './common.css'
 const Publications = () => {
 
   return (
-    <div className="container home-container">
+    <div className="container-fluid home-container">
         <div className="row text-center" style={{height:"50vh"}}>
             <div className="col-12 col-md-3"/>
             <div className="col-12 col-md-6 m-auto">

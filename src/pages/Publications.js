@@ -8,7 +8,7 @@ import './common.css'
 const Publications = () => {
 
   return (
-    <div className="container home-container publications-container">
+    <div className="container-fluid home-container publications-container">
         <div className="row text-center publications-container">
             <div className="col-12 col-md-6 offset-md-3">
                 <div style={{ marginTop: '5%' }}>
