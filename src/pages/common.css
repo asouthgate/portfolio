@@ -42,12 +42,12 @@ p {
 }
 
 h1 {
-  font-size: clamp(4rem, 8vw, 6em);
+  font-size: clamp(4rem, 8vw, 6rem);
   color: #d9d3ba;
 }
 
 h2 {
-  font-size: clamp(3rem, 8vw, 5em);
+  font-size: clamp(3rem, 8vw, 5rem);
 }
 
 h4 {

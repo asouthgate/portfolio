@@ -11,7 +11,7 @@ export const metadata = {
 export default function Sph2() {
   return (
     <div>
-      <h1> Wow that was surprisingly hard: GPU particle index and SPH </h1>
+      <h1> Surprisingly hard: GPU particle index and SPH </h1>
       <h2> <i> Updated 2025-06-16 </i> </h2>
       <p>
         Why would that be surprising? I am used to implementing algorithms that have been well trodden before. This one was tough. Setting up a particle index on the GPU requires doing a few things:
