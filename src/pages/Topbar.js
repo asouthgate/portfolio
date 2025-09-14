@@ -32,6 +32,7 @@ const Topbar = () => {
                 3/ Blog
               </a>
               <ul className="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
+                <li><Link to="/surprisingly-hard" className="dropdown-item"> Surprisingly hard: GPU particle index </Link></li>
                 <li><Link to="/vulkan-gpu-mini-cluster" className="dropdown-item"> Vulkan and the GPU as a mini compute cluster </Link></li>
                 <li><Link to="/smoothed-particle-hydrodynamics" className="dropdown-item"> Smoothed particle hydrodynamics </Link></li>
                 <li><Link to="/a-walk-through-unfamiliar-science-part-1" className="dropdown-item"> A walk through unfamiliar science, part 1 </Link></li>

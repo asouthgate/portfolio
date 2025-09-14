@@ -4,6 +4,8 @@ import BlogTemplate from '../blog/BlogTemplate';
 import Vulkan1, { metadata as meta1 } from '../posts/Vulkan1';
 import Walk1, { metadata as meta2 } from '../posts/Walk1';
 import Sph1, { metadata as meta3 } from '../posts/Sph1';
+import Sph2, { metadata as meta4 } from '../posts/Sph2';
+
 
 const blogRoutes = [
   {
@@ -17,7 +19,12 @@ const blogRoutes = [
   {
     path: "/vulkan-gpu-mini-cluster",
     element: <BlogTemplate title={meta1.title} date={meta1.date}><Vulkan1 /></BlogTemplate>,
+  },
+  {
+    path: "/surprisingly-hard",
+    element: <BlogTemplate title={meta1.title} date={meta1.date}><Sph2 /></BlogTemplate>,
   }
+
 ];
 
 export default blogRoutes.map(({ path, element }) => <Route key={path} path={path} element={element} />);
