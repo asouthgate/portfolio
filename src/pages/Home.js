@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import './common.css';
 import { getEvent } from '../api/requests'
 import rainCloud from '../assets/raincloud2.png';
+import waveVideo from "../assets/crash.mp4";  
 import { FloatEffect } from '../Effects';
 import Publications from './Publications';
 import Projects from './Blog';
@@ -19,8 +20,36 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
   return (
     <div className="container-fluid home-container">
         <div style={{ marginLeft: '5%', marginTop: '0%', marginRight: '5%' }}>
-            <h1 style={{ textAlign: 'center'}}> ALEX J. SOUTHGATE, PhD</h1>
-            <h2 style={{  textAlign: 'center'}}> Bioinformatician / Research Engineer </h2>
+
+<div style={{ position: 'relative', paddingTop: '0px', top: '-100px', height: '200px', overflow: 'visible' }}>
+  <video
+    src={waveVideo}
+    width="600"
+    autoPlay
+    loop
+    muted
+    playsInline
+    style={{
+      position: 'absolute',
+      top: '-50px',       // sticks up, but inside padding
+      left: '50%',
+      transform: 'translateX(-50%)',
+      zIndex: 0,
+    }}
+  />
+
+  <div
+    style={{
+      position: 'relative',
+      zIndex: 1,
+      textAlign: 'center',
+      color: 'white',
+      paddingTop: '1rem',
+    }}
+  >
+    <h1>ALEX J. SOUTHGATE, PhD</h1>
+  </div>
+</div>
         </div>
     </div>
   );

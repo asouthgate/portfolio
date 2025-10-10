@@ -1,7 +1,7 @@
 .navbar-custom {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 1.5); /* Shadow under the top bar */
-    border-bottom: 2px solid #1f1c1d; /* Top border with 4px thickness and red color */
     height: 3.5rem;
+    z-index: 100;      /* high value to ensure it’s above other elements */
 }
 
 .navbar-custom .nav-link {
@@ -10,9 +10,8 @@
 
 .nav-link {
   margin: 0.09rem 0.0rem 0.09rem 0rem;
-  background-color: rgba(20, 22, 26, 1.0);
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 1.5);
-  border-bottom: 1px solid #1f1c1d;
+  background-color: #1f212b;
+  border-bottom: 2px solid #c7c6bd;
 }
 
 .nav-item {
