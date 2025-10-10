@@ -21,36 +21,39 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
     <div className="container-fluid home-container">
         <div style={{ marginLeft: '5%', marginTop: '0%', marginRight: '5%' }}>
 
-<div style={{ position: 'relative', paddingTop: '0px', top: '-100px', height: '200px', overflow: 'visible' }}>
-  <video
-    src={waveVideo}
-    width="600"
-    autoPlay
-    loop
-    muted
-    playsInline
-    style={{
-      position: 'absolute',
-      top: '-10px',       // sticks up, but inside padding
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: 0,
-    }}
-  />
+            <div style={{ position: 'relative', paddingTop: '0px', top: '-100px', height: '200px', overflow: 'visible' }}>
+              <video
+                src={waveVideo}
+                width="600"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  position: 'absolute',
+                  top: '-10px',       // sticks up, but inside padding
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 0,
+                  maxWidth: '600px',
+                  width: '100vw',
+                }}
+              />
 
-  <div
-    style={{
-      position: 'relative',
-      zIndex: 1,
-      textAlign: 'center',
-      color: 'white',
-      paddingTop: '1rem',
-    }}
-  >
-    <h1>ALEX J. SOUTHGATE, PhD</h1>
-    <p> Figure 1: SPH simulation with 1 million particles and 2 liquid phases. Implemented with Vulkan on a cheap GPU, from scratch. </p>
-  </div>
-</div>
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  textAlign: 'center',
+                  color: 'white',
+                  paddingTop: '1rem',
+                }}
+              >
+                <h1>ALEX J. SOUTHGATE, PhD</h1>
+                <p> Figure 1: SPH simulation with 1 million particles and 2 liquid phases. Implemented with Vulkan on a cheap GPU. </p>
+              </div>
+            </div>
+
         </div>
     </div>
   );

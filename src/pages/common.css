@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 3.5rem);
+  min-height: calc(80vh - 3.5rem);
   height: auto; /* let it expand if content is taller */
   /*background-image: url('../assets/scrollingrain.png'); */
   /*background-repeat: repeat; */
