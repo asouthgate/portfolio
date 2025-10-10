@@ -31,7 +31,7 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
     playsInline
     style={{
       position: 'absolute',
-      top: '-50px',       // sticks up, but inside padding
+      top: '-10px',       // sticks up, but inside padding
       left: '50%',
       transform: 'translateX(-50%)',
       zIndex: 0,
