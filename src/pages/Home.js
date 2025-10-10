@@ -48,6 +48,7 @@ knowledge of cloud & HPC systems, and scientific expertise.`;
     }}
   >
     <h1>ALEX J. SOUTHGATE, PhD</h1>
+    <p> Figure 1: SPH simulation with 1 million particles and 2 liquid phases. Implemented with Vulkan on a cheap GPU, from scratch. </p>
   </div>
 </div>
         </div>
