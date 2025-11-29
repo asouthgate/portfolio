@@ -20,26 +20,8 @@ const Topbar = () => {
             <li className="nav-item">
               <Link to="/publications" className="nav-link"> 2/ Publications </Link>
             </li>
-            <li className="nav-item dropdown custom-dropdown-menu">
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                3/ Blog
-              </a>
-              <ul className="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
-                <li><Link to="/surprisingly-hard" className="dropdown-item"> Surprisingly hard: GPU particle index </Link></li>
-                <li><Link to="/vulkan-gpu-mini-cluster" className="dropdown-item"> Vulkan and the GPU as a mini compute cluster </Link></li>
-                <li><Link to="/smoothed-particle-hydrodynamics" className="dropdown-item"> Smoothed particle hydrodynamics </Link></li>
-                <li><Link to="/a-walk-through-unfamiliar-science-part-1" className="dropdown-item"> A walk through unfamiliar science, part 1 </Link></li>
-              </ul>
-            </li>
             <li className="nav-item">
-              <Link to="/contact" className="nav-link"> 4/ Contact </Link>
+              <Link to="/contact" className="nav-link"> 3/ Contact </Link>
             </li>
           </ul>
         </div>
