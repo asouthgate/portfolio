@@ -41,6 +41,10 @@ p {
  font-size: 1.38rem;
 }
 
+li {
+ color: #afb1cc;
+}
+
 h1 {
   font-size: clamp(4rem, 8vw, 6rem);
   color: #d9d3ba;
